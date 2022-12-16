@@ -8,9 +8,9 @@ require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
-// const { mongoURL } = process.env
- const mongoURL = "mongodb+srv://guptakaran123:Karan321@cluster0.wgvh4p4.mongodb.net/?retryWrites=true&w=majority"
-mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true})
+ const url = process.env.mongoURL;
+//  const mongoURL = "mongodb+srv://guptakaran123:Karan321@cluster0.wgvh4p4.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     console.log('connected to db');
 })
